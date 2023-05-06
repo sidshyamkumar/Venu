@@ -4,6 +4,7 @@ import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import { TouchableHighlight, Button, StyleSheet, Text, View, Dimensions, FlatList } from 'react-native';
 import WelcomeScreen from './Screens/WelcomeScreen';
+import SignUpScreen from './Screens/SignUpScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -15,6 +16,11 @@ export default function App() {
         <Stack.Screen
             name="Open"
             component={WelcomeScreen}
+        />
+
+        <Stack.Screen
+            name="SignUp"
+            component={SignUpScreen}
         />
       </Stack.Navigator>
     </NavigationContainer>
