@@ -20,17 +20,19 @@ export default function SignUpScreen ({route, navigation}) {
                     <View style={styles.buttonsContainer}>
                         {<TouchableOpacity style={styles.musicianButton} onPress={()=> navigation.navigate('SignUp', {
                                     text: 'Hello'
-                            })} activeOpacity={0.7}>
+                            })} activeOpacity={0.8}>
                             <Text style={styles.buttonText}>Musician</Text>        
                         </TouchableOpacity>}
                         {<TouchableOpacity style={styles.venueButton} onPress={()=> navigation.navigate('SignUp', {
                                     text: 'Hello'
-                            })} activeOpacity={0.7}>
+                            })} activeOpacity={0.8}>
                             <Text style={styles.buttonText}>Venue</Text>        
                         </TouchableOpacity>}
                     </View>
                     <Text style={styles.loginPrompt}>Already have an account?</Text>
-                    <Button title='Sign in' style={styles.signInText}></Button>
+                    <Image source={require('../Assets/pinkBlob.png')} style={styles.pinkBlobStyle}/>
+                    <Image source={require('../Assets/purpleBlob.png')} style={styles.purpleBlobStyle}/>
+                    <Button title='Sign in'></Button>
                 </View>
              </View>
         </View>    
@@ -77,14 +79,16 @@ const styles = StyleSheet.create({
         fontFamily: 'System',
         fontWeight: 'bold',
         fontSize: '26%',
-        marginBottom: '12%'
+        marginBottom: '12%',
+        zIndex: 2
     },
 
     buttonsContainer: {
         //backgroundColor: '#F00',
         width: '80%',
         height: '30%',
-        marginBottom: '10%'
+        marginBottom: '10%',
+        zIndex: 2
     },
 
     buttonText:{
@@ -119,8 +123,23 @@ const styles = StyleSheet.create({
     loginPrompt: {
         fontFamily: 'System',
         fontSize: "15%",
+        zIndex: 2
     },
 
+    signInText: {
+        zIndex: 2
+    },
 
+    purpleBlobStyle: {
+        position: 'absolute',
+        bottom: '0%',
+        opacity: 1
+    },
+
+    pinkBlobStyle: {
+        position: 'absolute',
+        bottom: '0%',
+        opacity: 1
+    }
 
   });
