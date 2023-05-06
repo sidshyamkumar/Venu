@@ -16,6 +16,8 @@ export default function FeedVenueView ({route, navigation}) {
         // Add more posts here
       ];
 
+    const numPosts = posts.length;
+
     const renderItem = ({ item }) => (
        <View style={[styles.post, { backgroundColor: item.backgroundColor }]} />
     );
@@ -46,6 +48,9 @@ export default function FeedVenueView ({route, navigation}) {
                         keyExtractor={(item) => item.id}
                         renderItem={renderItem}
                         contentContainerStyle={styles.scrollablePosts}
+                        snapToInterval={Dimensions.get('window').width}
+                        snapToAlignment='center'
+                        decelerationRate="fast"
                     />
                     <View style={styles.sectionLabel}>
                         <Text style={styles.label}>Available Soon</Text>
@@ -58,6 +63,8 @@ export default function FeedVenueView ({route, navigation}) {
                         renderItem={renderItem}
                         contentContainerStyle={styles.scrollablePosts}
                         snapToInterval={Dimensions.get('window').width}
+                        snapToAlignment='center'
+                        decelerationRate="fast"
                     />
                 </View>
 
@@ -137,16 +144,17 @@ const styles = StyleSheet.create({
         backgroundColor: '#FFF',
         flexDirection: 'row',
         flexGrow: 1,
-        width: '300%',
+        width: Dimensions.get('window').width * 4,
         pagingEnabled: 'true'
     },
 
     post: {
-      // marginRight: '2%',
-      // marginLeft: '2%',
+        // marginRight: '2%',
+    //    marginLeft: '2%',
        height: '100%',
        width: Dimensions.get('window').width, // adjust for margins
-       backgroundColor: '#F00'     
+       backgroundColor: '#F00',
+       borderRadius: 50    
     }
 
   });
