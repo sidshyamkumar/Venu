@@ -23,7 +23,7 @@ export default function SignUpScreen ({route, navigation}) {
                             })} activeOpacity={0.8}>
                             <Text style={styles.buttonText}>Musician</Text>        
                         </TouchableOpacity>}
-                        {<TouchableOpacity style={styles.venueButton} onPress={()=> navigation.navigate('SignUp', {
+                        {<TouchableOpacity style={styles.venueButton} onPress={()=> navigation.navigate('FeedVenueView', {
                                     text: 'Hello'
                             })} activeOpacity={0.8}>
                             <Text style={styles.buttonText}>Venue</Text>        

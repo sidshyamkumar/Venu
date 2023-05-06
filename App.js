@@ -5,6 +5,7 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import { TouchableHighlight, Button, StyleSheet, Text, View, Dimensions, FlatList } from 'react-native';
 import WelcomeScreen from './Screens/WelcomeScreen';
 import SignUpScreen from './Screens/SignUpScreen';
+import FeedVenueView from './Screens/FeedVenueView';
 
 const Stack = createNativeStackNavigator();
 
@@ -21,6 +22,11 @@ export default function App() {
         <Stack.Screen
             name="SignUp"
             component={SignUpScreen}
+        />
+
+        <Stack.Screen
+            name="FeedVenueView"
+            component={FeedVenueView}
         />
       </Stack.Navigator>
     </NavigationContainer>
