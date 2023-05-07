@@ -19,7 +19,9 @@ export default function FeedVenueView ({route, navigation}) {
     const numPosts = posts.length;
 
     const renderItem = ({ item }) => (
-       <View style={[styles.post, { backgroundColor: item.backgroundColor }]} />
+       <View style={styles.postContainer}>
+            <View style={[styles.post, { backgroundColor: item.backgroundColor }]}/>
+       </View>
     );
 
     return (
@@ -116,7 +118,8 @@ const styles = StyleSheet.create({
         backgroundColor: '#9B0CDE',
         justifyContent: 'center',
         bottom: '0%',
-        alignSelf: 'flex-end'
+        alignSelf: 'flex-end',
+        marginTop: '5%'
     },
      
     logo: {
@@ -148,13 +151,21 @@ const styles = StyleSheet.create({
         pagingEnabled: 'true'
     },
 
-    post: {
+    postContainer: {
         // marginRight: '2%',
     //    marginLeft: '2%',
        height: '100%',
        width: Dimensions.get('window').width, // adjust for margins
-       backgroundColor: '#F00',
-       borderRadius: 50    
+       justifyContent: 'center',
+       alignContent: 'center',
+       backgroundColor: '#FFF',
+       paddingHorizontal: '7%'    
+    },
+
+    post: {
+        width: '100%',
+        height: '100%',
+        borderRadius: '60%'
     }
 
   });
