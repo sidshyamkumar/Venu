@@ -1,9 +1,9 @@
 {
   "expoServerPort": null,
-  "packagerPort": null,
-  "expoServerNgrokUrl": null,
-  "packagerNgrokUrl": null,
-  "ngrokPid": null,
+  "packagerPort": 19000,
+  "expoServerNgrokUrl": "https://yv-i6x.anonymous.venu.exp.direct",
+  "packagerNgrokUrl": "https://yv-i6x.anonymous.venu.exp.direct",
+  "ngrokPid": 18376,
   "packagerPid": null,
   "webpackServerPort": null
 }
