@@ -7,7 +7,7 @@ import { TouchableHighlight, Button, Image, StyleSheet, Text, View, Dimensions, 
 import { Font } from 'expo';
 import { color } from '@rneui/base';
 
-export default function FeedVenueView ({route, navigation}) {
+export default function MusicianProfile ({route, navigation}) {
 
     const posts = [
         { id: 1, backgroundColor: '#F00' },
@@ -23,45 +23,38 @@ export default function FeedVenueView ({route, navigation}) {
             <View style={[styles.post, { backgroundColor: item.backgroundColor }]}/>
        </View>
     );
-
+      
     return (
         <View style={styles.container}>
              <StatusBar style='light'/>
-             <View style={styles.feedVenueContainer}>
+             <View style={styles.MusicianProfileContainer}>
                 <View style={styles.topBar}>
                     <Image source={require('../Assets/logo.png')} style={styles.logo}/>
                 </View>
 
-                <View style={styles.postSection}>
-                    <View style={styles.sectionLabel}>
-                        <Text style={styles.label}>Featured Musicians</Text>
+                <View style={styles.profileSection}>
+                    <View style={styles.profileHeader}>
+                        <View style={styles.profilePicContainer}>
+                            <View style={styles.profilePicHolder}>
+                                <Image source={require('../Assets/venuProfilePic.png')} style={styles.profilePic}/>
+                            </View>
+                        </View>
+
+                        <View style={styles.profileName}>
+
+                        </View>
+
+                        <View style={styles.generalDescription}>
+
+                        </View>
+
+                        <View style={styles.moreDescription}>
+
+                        </View>
                     </View>
-                    <FlatList
-                        data={posts}
-                        horizontal= 'true'
-                        pagingEnabled='true'
-                        keyExtractor={(item) => item.id}
-                        renderItem={renderItem}
-                        contentContainerStyle={styles.scrollablePosts}
-                        snapToInterval={Dimensions.get('window').width}
-                        snapToAlignment='center'
-                        decelerationRate="fast"
-                    />
-                    <View style={styles.sectionLabel}>
-                        <Text style={styles.label}>Available Soon</Text>
-                    </View>
-                    <FlatList
-                        data={posts}
-                        horizontal= 'true'
-                        pagingEnabled='true'
-                        keyExtractor={(item) => item.id}
-                        renderItem={renderItem}
-                        contentContainerStyle={styles.scrollablePosts}
-                        snapToInterval={Dimensions.get('window').width}
-                        snapToAlignment='center'
-                        decelerationRate="fast"
-                    />
-                </View>
+
+
+                </View> 
 
                 <View style={styles.bottomBar}>
 
@@ -81,7 +74,7 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
     },
 
-    feedVenueContainer: {
+    MusicianProfileContainer: {
         width: '100%',
         height: '100%',
         alignItems: 'center',
@@ -98,11 +91,11 @@ const styles = StyleSheet.create({
         justifyContent: 'center'
     },
 
-    postSection: { 
+    profileSection: { 
         width: '100%',
         height: '76%%',
         backgroundColor: '#FFF',
-        justifyContent: 'center'
+        justifyContent: 'flex-start'
     },
 
     bottomBar: { 
@@ -121,27 +114,32 @@ const styles = StyleSheet.create({
        height: '70%',
     },
 
-    sectionLabel: {
-        height: '7%',
+    profileHeader: {
         width: '100%',
-        backgroundColor: '#FFF',
+        height: '40%',
+        //backgroundColor: '#F00',
+        justifyContent: 'flex-start'
+    },
+
+    profilePicContainer : {
         justifyContent: 'center',
-        paddingLeft: '3%'
+        width: '100%',
+        height: '55%',
+        alignSelf: 'center',
+        alignItems: 'center',
+        marginTop: '2%'
     },
 
-    label: {
-        fontFamily: 'System',
-        fontWeight: 'bold',
-        fontSize: '22%'
-    },
-
-    scrollablePosts: {
+    profilePicHolder: {
+        width: '40%',
         height: '100%',
-        backgroundColor: '#FFF',
-        flexDirection: 'row',
-        flexGrow: 1,
-        width: Dimensions.get('window').width * 4,
-        pagingEnabled: 'true'
+    },
+
+    profilePic: {
+        resizeMode: 'contain',
+        height: '100%',
+        width: '100%',
+        borderRadius: 120
     },
 
     postContainer: {

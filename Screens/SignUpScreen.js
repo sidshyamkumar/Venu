@@ -18,7 +18,7 @@ export default function SignUpScreen ({route, navigation}) {
                     <Text style={styles.signUpText}>Book your next gig with Venu</Text>
                     <Text style={styles.signUpText}>Get started as a</Text>
                     <View style={styles.buttonsContainer}>
-                        {<TouchableOpacity style={styles.musicianButton} onPress={()=> navigation.navigate('SignUp', {
+                        {<TouchableOpacity style={styles.musicianButton} onPress={()=> navigation.navigate('MusicianProfile', {
                                     text: 'Hello'
                             })} activeOpacity={0.8}>
                             <Text style={styles.buttonText}>Musician</Text>        

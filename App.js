@@ -6,6 +6,7 @@ import { TouchableHighlight, Button, StyleSheet, Text, View, Dimensions, FlatLis
 import WelcomeScreen from './Screens/WelcomeScreen';
 import SignUpScreen from './Screens/SignUpScreen';
 import FeedVenueView from './Screens/FeedVenueView';
+import MusicianProfile from './Screens/MusicianProfile';
 
 const Stack = createNativeStackNavigator();
 
@@ -27,6 +28,11 @@ export default function App() {
         <Stack.Screen
             name="FeedVenueView"
             component={FeedVenueView}
+        />
+
+<Stack.Screen
+            name="MusicianProfile"
+            component={MusicianProfile}
         />
       </Stack.Navigator>
     </NavigationContainer>
