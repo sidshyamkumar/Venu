@@ -7,6 +7,7 @@ import WelcomeScreen from './Screens/WelcomeScreen';
 import SignUpScreen from './Screens/SignUpScreen';
 import FeedVenueView from './Screens/FeedVenueView';
 import MusicianProfile from './Screens/MusicianProfile';
+import {VenueCalendar}  from './Screens/VenueCalendar';
 
 const Stack = createNativeStackNavigator();
 
@@ -30,7 +31,12 @@ export default function App() {
             component={FeedVenueView}
         />
 
-<Stack.Screen
+        <Stack.Screen
+            name="VenueCalendar"
+            component={VenueCalendar}
+        />
+
+        <Stack.Screen
             name="MusicianProfile"
             component={MusicianProfile}
         />

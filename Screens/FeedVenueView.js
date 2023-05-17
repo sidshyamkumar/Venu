@@ -6,6 +6,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { TouchableHighlight, Button, Image, StyleSheet, Text, View, Dimensions, FlatList, TextInput, TouchableOpacity, ScrollView } from 'react-native';
 import { Font } from 'expo';
 import { color } from '@rneui/base';
+import { SFSymbol } from "react-native-sfsymbols";
 
 export default function FeedVenueView ({route, navigation}) {
 
@@ -64,8 +65,15 @@ export default function FeedVenueView ({route, navigation}) {
                 </View>
 
                 <View style={styles.bottomBar}>
+                    <TouchableOpacity onPress={() => navigation.navigate('MusicianProfile')}>
+                         <Text style={{color: '#fff', fontSize: 20}}>Profile</Text>
+                    </TouchableOpacity>
 
+                    <TouchableOpacity onPress={() => navigation.navigate('VenueCalendar')}>
+                          <Text style={{color: '#fff', fontSize: 20}}>Calendar</Text>
+                     </TouchableOpacity>
                 </View>
+
              </View>
         </View>    
     )
@@ -109,7 +117,9 @@ const styles = StyleSheet.create({
         width: '100%',
         height: '12%',
         backgroundColor: '#9B0CDE',
-        justifyContent: 'center',
+        justifyContent: 'space-around',
+        flexDirection: 'row',
+        alignItems: 'center',
         bottom: '0%',
         alignSelf: 'flex-end',
         marginTop: '5%'
